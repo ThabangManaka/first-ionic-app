@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class LoginPage {
 
   constructor(private router: Router) {}
-onTask() {
-    this.router.navigate(['register']);
+onLogin() {
+    this.router.navigate(['task']);
 }
 
 onRegister() {
