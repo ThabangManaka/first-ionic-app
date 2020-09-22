@@ -12,4 +12,8 @@ export class LoginPage {
 onTask() {
     this.router.navigate(['register']);
 }
+
+onRegister() {
+      this.router.navigate(['register']);
+}
 }

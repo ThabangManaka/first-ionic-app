@@ -11,7 +11,7 @@ import { TaskComponent } from './task.component';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: TaskComponent }])
+    RouterModule.forChild([{ path: 'task', component: TaskComponent }])
   ],
   declarations: [TaskComponent]
 })
