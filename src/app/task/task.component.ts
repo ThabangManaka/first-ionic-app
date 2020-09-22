@@ -52,4 +52,8 @@ export class TaskComponent implements OnInit {
     let result = await alert.onDidDismiss();
     console.log(result);
   }
+  onDelete(id: any) {
+    this._taskService.deleteEmployee(id)
+
+  }
 }

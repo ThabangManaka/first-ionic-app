@@ -15,6 +15,9 @@
         <ion-list *ngFor="let task of AllTaskList">
          <ion-item>
            <ion-label>{{task.content}}</ion-label>
+           <ion-button>  <ion-icon name="pencil-outline"></ion-icon> </ion-button>
+           <ion-button color="danger" (click)="onDelete(task.Id)"> <ion-icon name="trash-outline"></ion-icon> </ion-button>
+           
          </ion-item>
         </ion-list>
       </ion-col>
