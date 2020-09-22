@@ -22,6 +22,7 @@ export class TaskComponent implements OnInit {
     const alert = await this.alertController.create({
       header: 'Add New Task',
         inputs: [
+          
         {
           name: 'content',
           type: 'text',
@@ -53,7 +54,53 @@ export class TaskComponent implements OnInit {
     console.log(result);
   }
   onDelete(id: any) {
-    this._taskService.deleteEmployee(id)
+    this._taskService.deleteEmployee(id);
 
   }
+ async onUpdate (Id: any) {
+    const task= this._taskService.getAllTask().find(c => c.Id === Id);
+    
+      const alert = await this.alertController.create({
+      header: 'Update Task',
+        inputs: [
+      
+        {
+          name: 'content',
+          type: 'text',
+          value: task.content,
+          placeholder: 'Content'
+        },
+    
+        {
+          name: 'status',
+          type: 'text',
+          value: task.status,
+          placeholder: 'Status'
+        },
+            {
+          name: 'priority',
+          type: 'text',
+          value: task.priority,
+          placeholder: 'Priority'
+        },
+        ],
+      buttons: [
+        { text: "Save", handler: (res) =>{
+          task.content= res.content;
+          task.status =res.status;
+          task.priority =res.priority;
+          console.log(task)
+          this._taskService.updateTask(task);
+
+        }}
+      
+      ],
+    });
+
+    await alert.present();
+    let result = await alert.onDidDismiss();
+    //console.log(result);
+
+  }
+
 }

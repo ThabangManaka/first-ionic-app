@@ -16,10 +16,10 @@ export class TaskService {
   }
 
 updateTask(task: Task){
-  console.log(task);
+  console.log(task.Id);
   
      const index = this._taskList.findIndex(c => c.Id === task.Id);
-     console.log(index);
+    // console.log(index);
      this._taskList[index] = task;
 
   }
