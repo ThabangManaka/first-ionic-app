@@ -6,15 +6,15 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TaskComponent } from './task/task.component';
-import { RegisterComponent } from './register/register.component';
+import { TaskService } from './task.service';
+
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, RegisterComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy, providers: [TaskService] }
   ],
   bootstrap: [AppComponent]
 })

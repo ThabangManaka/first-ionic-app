@@ -3,17 +3,16 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LoginPage } from './login.page';
-import { TaskModule } from '../task/task.module';
+import { TaskComponent } from './task.component';
+
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: LoginPage }]),
-    TaskModule
+    RouterModule.forChild([{ path: '', component: TaskComponent }])
   ],
-  declarations: [LoginPage]
+  declarations: [TaskComponent]
 })
-export class LoginPageModule {}
+export class TaskModule {}
